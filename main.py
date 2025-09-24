@@ -9,6 +9,8 @@ from tensorflow.keras.models import load_model
 import json
 import logging
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +31,17 @@ scaler = None
 label_encoders = None
 feature_names = None
 constants = None
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
+
+
 
 # Initialize models
 def initialize_models():
