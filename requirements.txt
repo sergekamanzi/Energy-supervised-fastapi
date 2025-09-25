@@ -1,9 +1,8 @@
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
-<<<<<<< HEAD
-=======
+
 tensorflow-cpu==2.20.0
->>>>>>> c560d03 (first commit)
+
 numpy==1.26.4
 pandas==2.2.2
 joblib==1.4.2
