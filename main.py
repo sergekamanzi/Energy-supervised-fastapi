@@ -58,7 +58,7 @@ def initialize_models():
         scaler = joblib.load('energy_scaler.pkl')
         label_encoders = joblib.load('label_encoders.pkl')
         feature_names = joblib.load('feature_names.pkl')
-        X_train_columns = joblib.load('X_train_columns.pkl')  # This should contain the training data structure
+        X_train_columns = joblib.load('X_train_columns.pkl')
         
         logger.info(" Preprocessing objects loaded successfully!")
         
@@ -82,7 +82,7 @@ def initialize_models():
                 model = None
         
     except Exception as e:
-        logger.error(f"❌ Error loading models: {e}")
+        logger.error(f" Error loading models: {e}")
         model = None
         scaler = None
         label_encoders = None
@@ -302,7 +302,7 @@ def get_smart_recommendations(total_kwh: float, total_bill: float, breakdown: Li
     # Budget analysis
     recommendations.append(RecommendationItem(
         category="budget",
-        message="BUDGET ANALYSIS"
+        message=" BUDGET ANALYSIS"
     ))
     
     if total_bill > budget:
@@ -335,7 +335,7 @@ def get_smart_recommendations(total_kwh: float, total_bill: float, breakdown: Li
     # Tariff insights
     recommendations.append(RecommendationItem(
         category="tariff",
-        message="⚡ TARIFF BRACKET INSIGHTS"
+        message=" TARIFF BRACKET INSIGHTS"
     ))
     recommendations.append(RecommendationItem(
         category="tariff",
@@ -383,14 +383,14 @@ def get_smart_recommendations(total_kwh: float, total_bill: float, breakdown: Li
     if high_power_items:
         recommendations.append(RecommendationItem(
             category="optimization",
-            message="• Consider using high-power appliances during off-peak hours"
+            message=" Consider using high-power appliances during off-peak hours"
         ))
     
     high_consumption = [item for item in breakdown if item['estimated_kwh'] > 10]
     if high_consumption:
         recommendations.append(RecommendationItem(
             category="optimization",
-            message="• Focus on reducing usage for high-consumption appliances first"
+            message=" Focus on reducing usage for high-consumption appliances first"
         ))
     
     return recommendations
