@@ -53,33 +53,33 @@ model_constants.pkl
 
 ## Setup Instructions
 
-1. **Activate Python Environment**  
+1. Activate Python Environment
    Make sure you have your Python virtual environment ready. To activate it, run:  
-   ```bash
+   bash
    .\env-supervised\Scripts\Activate
-````
 
-2. **Install Dependencies**
+
+2. Install Dependencies
    If you already have a `requirements.txt` file, install all dependencies using:
 
-   ```bash
+   bash
    pip install -r requirements.txt
-   ```
+   
 
-3. **Run the API**
+3. Run the API
    Start the FastAPI server with the following command:
 
-   ```bash
+   bash
    uvicorn main:app --reload --host 0.0.0.0 --port 8000
-   ```
 
-4. **Swagger UI**
+
+4. Swagger UI
    Once the server is running, you can access the interactive API documentation (Swagger UI) at:
-   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+  (http://127.0.0.1:8000/docs)
 
-5. **Freeze Dependencies**
+5. Freeze Dependencies
    To save your current environment packages, run:
 
-   ```bash
+   bash
    pip freeze > requirements.txt
-   ```
+   
